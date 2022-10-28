@@ -1,4 +1,7 @@
-#pragma once
+#ifndef SOURCE_CAR_H
+#define SOURCE_CAR_H
+
+#include <memory>
 
 #include "FuelGauge.h"
 #include "Logger.h"
@@ -12,5 +15,7 @@ public:
 	void Accelerate();
 private:
 	FuelGauge fuelGauge;
-	ILogger* logger;
+	std::shared_ptr<ILogger> logger;
 };
+
+#endif // SOURCE_CAR_H

@@ -1,9 +1,10 @@
+
 #include "Car.h"
 #include "Logger.h"
 
 int main(int argc, char* argv[])
 {
-	Logger logger;
+	Logger<LogLevel::info> logger;
 
 	logger.Log("Starting application");
 

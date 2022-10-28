@@ -1,4 +1,7 @@
-#pragma once
+#ifndef SOURCE_FUELGAUGE_H
+#define SOURCE_FUELGAUGE_H
+
+#include <memory>
 
 #include "Logger.h"
 
@@ -9,5 +12,7 @@ public:
 	void DecrementFuelLevel();
 private:
 	int fuelLevel;
-	ILogger* logger;
+	std::shared_ptr<ILogger> logCritical;
 };
+
+#endif // SOURCE_FUELGAUGE_H
