@@ -1,7 +1,9 @@
+#include <memory>
+
 #include "Car.h"
 
 Car::Car()
-	: logger(new Logger())
+	: logger(new BlueLogger())
 {
 }
 void Car::TurnLeft()
