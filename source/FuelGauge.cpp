@@ -4,7 +4,7 @@
 
 FuelGauge::FuelGauge()
 	: fuelLevel(5)
-	, logCritical(std::make_shared<Logger<LogLevel::critical>>())
+	, logger(new RedLogger())
 {
 }
 void FuelGauge::DecrementFuelLevel()
@@ -12,6 +12,6 @@ void FuelGauge::DecrementFuelLevel()
 	--fuelLevel;
 	if (fuelLevel < 2)
 	{
-		logCritical->Log("Low fuel!");
+		logger->Log("Low fuel!");
 	}
 }

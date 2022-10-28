@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[])
 {
-	Logger<LogLevel::info> logger;
+	Logger logger;
 
 	logger.Log("Starting application");
 

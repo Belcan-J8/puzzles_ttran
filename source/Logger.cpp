@@ -1,19 +1,18 @@
 #include "Logger.h"
 
+#include "termcolor.hpp"
 #include <iostream>
 
-template<LogLevel lvl>
-Logger<lvl>::Logger(): logLevel(lvl) {}
-
-template<LogLevel lvl>
-void Logger<lvl>::Log(std::string string)
+void Logger::Log(std::string string)
 {
-	if(logLevel == LogLevel::info) {
-		std::cout << termcolor::blue << string << std::endl;
-	} else if(logLevel == LogLevel::critical) {
-		std::cout << termcolor::red << string << std::endl;
-	}
+	std::cout << string << std::endl;
 }
 
-template class Logger<LogLevel::info>;
-template class Logger<LogLevel::critical>;
+void BlueLogger::Log(std::string string)
+{
+	std::cout << termcolor::blue << string << std::endl;
+}
+void RedLogger::Log(std::string string)
+{
+	std::cout << termcolor::red << string << std::endl;
+}

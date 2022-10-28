@@ -3,8 +3,7 @@
 #include "Car.h"
 
 Car::Car()
-	: fuelGauge()
-	, logger(std::make_shared<Logger<LogLevel::info>>())
+	: logger(new BlueLogger())
 {
 }
 void Car::TurnLeft()

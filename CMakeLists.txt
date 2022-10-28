@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(termcolor REQUIRED)
 include_directories(SYSTEM ${termcolor_INCLUDE_DIRS})
 
-include_directories(source)
+include_directories(source lib)
 
 add_executable(${PROJECT_NAME}
     source/Car.cpp

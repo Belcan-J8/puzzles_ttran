@@ -12,7 +12,7 @@ public:
 	void DecrementFuelLevel();
 private:
 	int fuelLevel;
-	std::shared_ptr<ILogger> logCritical;
+	ILogger* logger;
 };
 
 #endif // SOURCE_FUELGAUGE_H
