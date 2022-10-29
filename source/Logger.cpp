@@ -4,7 +4,7 @@
 #include <iostream>
 
 template<LogColor c>
-Logger<c>::Logger(): logColor(c) {}
+Logger<c>::Logger(): logColor(std::move(c)) {}
 
 template<LogColor c>
 void Logger<c>::Log(std::string string)
