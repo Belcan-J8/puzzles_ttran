@@ -8,12 +8,14 @@
 
 class Car
 {
+	
 public:
-	Car();
+	Car(LogColor c);
 	void TurnLeft();
 	void TurnRight();
 	void Accelerate();
 private:
+	const LogColor logColor;
 	FuelGauge fuelGauge;
 	std::shared_ptr<ILogger> logger;
 };

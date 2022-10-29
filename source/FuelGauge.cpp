@@ -4,7 +4,7 @@
 
 FuelGauge::FuelGauge()
 	: fuelLevel(5)
-	, logger(new RedLogger())
+	, logYellow(std::make_shared<Logger<LogColor::yellow>>())
 {
 }
 void FuelGauge::DecrementFuelLevel()
@@ -12,6 +12,6 @@ void FuelGauge::DecrementFuelLevel()
 	--fuelLevel;
 	if (fuelLevel < 2)
 	{
-		logger->Log("Low fuel!");
+		logYellow->Log("Low fuel!");
 	}
 }

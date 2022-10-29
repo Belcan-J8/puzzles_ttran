@@ -2,9 +2,18 @@
 
 #include "Car.h"
 
-Car::Car()
-	: logger(new BlueLogger())
+Car::Car(LogColor c)
+	: logColor(std::move(c))
+	, fuelGauge()
+	, logger(nullptr)
 {
+	if(logColor == LogColor::cyan) {
+		logger = std::make_shared<Logger<LogColor::cyan>>();
+	} else if(logColor == LogColor::magenta) {
+		logger = std::make_shared<Logger<LogColor::magenta>>();
+	} else {
+		logger = std::make_shared<Logger<LogColor::white>>();
+	}
 }
 void Car::TurnLeft()
 {

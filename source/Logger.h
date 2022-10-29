@@ -2,19 +2,21 @@
 #define SOURCE_LOGGER_H
 
 #include <string>
-
 #include <termcolor/termcolor.hpp>
 
-enum class LogLevel{info, critical};
+enum class LogColor{white, red, blue, yellow, cyan, magenta};
 
 struct ILogger
 {
 	virtual void Log(std::string string) = 0;
 };
 
+template<LogColor c>
 class Logger : public ILogger
 {
+	LogColor logColor;
 public:
+Logger();
 	void Log(std::string string);
 };
 
